@@ -1,0 +1,58 @@
+User-agent: *
+Allow: /
+Disallow: /patents
+Disallow: /admin/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /private/
+
+# Block AI training crawlers
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: Claude-Web
+Disallow: /
+
+User-agent: PerplexityBot
+Disallow: /
+
+User-agent: YouBot
+Disallow: /
+
+User-agent: Bard
+Disallow: /
+
+User-agent: BingBot
+Disallow: /
+
+# Block scraping tools
+User-agent: Scrapy
+Disallow: /
+
+User-agent: wget
+Disallow: /
+
+User-agent: curl
+Disallow: /
+
+User-agent: python-requests
+Disallow: /
+
+User-agent: Java
+Disallow: /
+
+User-agent: Go-http-client
+Disallow: /
+
+# Sitemap
+Sitemap: https://somnosense.com/sitemap.xml
+
