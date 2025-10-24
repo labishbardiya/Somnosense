@@ -13,7 +13,7 @@ export default function Footer() {
             <p className="text-gray-300 mb-4 max-w-md">
               Sleep Well. Protect Your Smile. Clinician-Ready Insights, Right From Home.
             </p>
-            <p className="text-sm text-gray-400">Patent Pending</p>
+            <p className="text-sm text-gray-400">Filed Patent Application</p>
           </div>
 
           <div>
@@ -59,7 +59,7 @@ export default function Footer() {
               <p className="mt-1">SomnoSense™ is a trademark. All rights reserved.</p>
             </div>
             <div className="text-sm text-gray-400">
-              <p>Support: <a href="mailto:support@somnosense.com" className="hover:text-blue-400 transition-colors">support@somnosense.com</a></p>
+              <p>Support: <a href="mailto:contact.somnosense@gmail.com" className="hover:text-blue-400 transition-colors">contact.somnosense@gmail.com</a></p>
             </div>
           </div>
         </div>

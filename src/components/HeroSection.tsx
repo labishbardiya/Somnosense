@@ -1,9 +1,46 @@
-'use client';
+"use client";
 
+import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRightIcon, ShieldCheckIcon } from '@heroicons/react/24/outline';
 
 export default function HeroSection() {
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+  const [showPlayOverlay, setShowPlayOverlay] = useState(false);
+
+  useEffect(() => {
+    // Try to autoplay unmuted. If the browser blocks it, show an overlay so the user can
+    // explicitly start playback with sound.
+    const v = videoRef.current;
+    if (!v) return;
+
+    // Ensure video is unmuted per user request
+    v.muted = false;
+
+    const playPromise = v.play();
+    if (playPromise !== undefined) {
+      playPromise
+        .then(() => {
+          // autoplay succeeded
+          setShowPlayOverlay(false);
+        })
+        .catch(() => {
+          // autoplay failed (most likely due to autoplay policy). show overlay.
+          setShowPlayOverlay(true);
+        });
+    }
+  }, []);
+
+  function handleOverlayPlay() {
+    const v = videoRef.current;
+    if (!v) return;
+    v.muted = false;
+    v.play().catch(() => {
+      /* ignore */
+    });
+    setShowPlayOverlay(false);
+  }
+
   return (
     <section className="relative bg-gradient-to-br from-blue-50 to-indigo-100 py-20 lg:py-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -68,7 +105,7 @@ export default function HeroSection() {
                 <ArrowRightIcon className="ml-2 h-5 w-5" />
               </a>
               <a
-                href="https://linkedin.com/company/somnosense"
+                href="https://www.linkedin.com/company/somnosense"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center px-8 py-4 bg-white text-blue-600 font-semibold rounded-lg border-2 border-blue-600 hover:bg-blue-50 transition-colors"
@@ -87,24 +124,21 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="relative"
           >
-            <div className="relative mx-auto max-w-md">
+            <div className="relative mx-auto max-w-2xl">
               <div className="bg-white rounded-3xl shadow-2xl p-8 border border-gray-200">
-                <div className="bg-gradient-to-br from-blue-100 to-indigo-200 rounded-2xl p-6 mb-6">
-                  <div className="bg-white rounded-xl p-4 shadow-inner">
-                    <div className="flex items-center justify-center h-32">
-                      <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center">
-                        <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
-                          <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                      </div>
-                    </div>
+                {/* YouTube embed: replace video ID if needed. */}
+                <div className="rounded-2xl overflow-hidden bg-black">
+                  <div className="relative" style={{ paddingTop: '56.25%' }}>
+                        <video
+                          className="absolute top-0 left-0 w-full h-full object-cover"
+                          src="/videos/intro.mp4"
+                          controls
+                          playsInline
+                          aria-hidden="true"
+                          aria-label="SomnoSense intro video"
+                        >
+                        </video>
                   </div>
-                </div>
-                
-                <div className="space-y-3">
-                  <div className="h-3 bg-gray-200 rounded-full"></div>
-                  <div className="h-3 bg-blue-200 rounded-full w-3/4"></div>
-                  <div className="h-3 bg-gray-200 rounded-full w-1/2"></div>
                 </div>
               </div>
             </div>

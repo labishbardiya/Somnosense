@@ -133,21 +133,34 @@ export default function ForResearchersSection() {
                   technology to the home, making bruxism detection accessible, affordable, 
                   and comfortable for everyone.
                 </p>
+                <p>
+                  Our idea was developed during InventX'25 at IIT Gandhinagar - an intensive
+                  innovation sprint where we prototyped the concept and validated the core
+                  sensing approach. Watch the short demo below to see the idea in action.
+                </p>
               </div>
             </div>
             
-            <div className="bg-gradient-to-br from-blue-50 to-indigo-100 rounded-2xl p-8">
+            <div className="bg-gradient-to-br from-blue-50 to-indigo-100 rounded-2xl p-6">
               <div className="text-center">
-                <div className="w-24 h-24 mx-auto mb-6 bg-blue-600 rounded-full flex items-center justify-center">
-                  <svg className="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clipRule="evenodd" />
-                  </svg>
+                <div className="w-full mb-4 rounded-lg overflow-hidden">
+                  {/* Responsive 16:9 embed */}
+                  <div className="relative" style={{ paddingBottom: '56.25%', height: 0 }}>
+                    <iframe
+                      src="https://www.youtube.com/embed/YxEBLeNQ-wo"
+                      title="SomnoSense InventX'25 Demo"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="absolute inset-0 w-full h-full"
+                    />
+                  </div>
                 </div>
                 <h4 className="text-lg font-semibold text-gray-900 mb-2">
                   Innovation in Action
                 </h4>
                 <p className="text-gray-600">
-                  Transforming sleep health monitoring through accessible technology
+                  Transforming sleep health monitoring through accessible technology - developed at InventX'25, IIT Gandhinagar
                 </p>
               </div>
             </div>

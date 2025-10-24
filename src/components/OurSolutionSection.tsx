@@ -1,5 +1,6 @@
-'use client';
+"use client";
 
+import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { DevicePhoneMobileIcon, ChartBarIcon, HomeIcon, UserIcon } from '@heroicons/react/24/outline';
 
@@ -30,7 +31,7 @@ export default function OurSolutionSection() {
   return (
     <section id="our-solution" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
+          <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -55,22 +56,20 @@ export default function OurSolutionSection() {
             className="relative"
           >
             <div className="bg-white rounded-3xl shadow-2xl p-8 border border-gray-200">
-              <div className="bg-gradient-to-br from-blue-100 to-indigo-200 rounded-2xl p-6 mb-6">
-                <div className="bg-white rounded-xl p-4 shadow-inner">
-                  <div className="flex items-center justify-center h-32">
-                    <div className="w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center">
-                      <svg className="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="space-y-3">
-                <div className="h-3 bg-blue-200 rounded-full w-full"></div>
-                <div className="h-3 bg-gray-200 rounded-full w-3/4"></div>
-                <div className="h-3 bg-gray-200 rounded-full w-1/2"></div>
+              {/* container will adopt the video's intrinsic aspect ratio once metadata loads */}
+              <div
+                className="rounded-2xl overflow-hidden mb-6 bg-black w-full"
+                style={undefined}
+                id="working-video-container"
+              >
+                <video
+                  id="working-video"
+                  src="/videos/working.mp4"
+                  controls
+                  playsInline
+                  className="w-full h-full object-cover block"
+                  aria-hidden="true"
+                />
               </div>
             </div>
             
@@ -79,7 +78,7 @@ export default function OurSolutionSection() {
               transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
               className="absolute -top-4 -right-4 bg-green-500 text-white px-4 py-2 rounded-full shadow-lg text-sm font-medium"
             >
-              Pilot Study
+              Product Demo
             </motion.div>
           </motion.div>
 

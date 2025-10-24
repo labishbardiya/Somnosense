@@ -50,7 +50,7 @@ export default function TrademarkInformation() {
             </p>
             <div className="bg-gray-50 rounded-lg p-6">
               <p className="text-gray-700 mb-2">
-                <strong>Email:</strong> <a href="mailto:support@somnosense.com" className="text-blue-600 hover:text-blue-800">support@somnosense.com</a>
+                <strong>Email:</strong> <a href="mailto:contact.somnosense@gmail.com" className="text-blue-600 hover:text-blue-800">contact.somnosense@gmail.com</a>
               </p>
               <p className="text-gray-700 mb-2">
                 <strong>Subject Line:</strong> Trademark Inquiry

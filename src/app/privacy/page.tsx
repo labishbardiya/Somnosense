@@ -17,9 +17,9 @@ export default function PrivacyPolicy() {
             <p className="text-blue-800 font-medium">
               <strong>Last Updated:</strong> [Date to be updated by legal team]
             </p>
-            <p className="text-blue-700 mt-2">
+              <p className="text-blue-700 mt-2">
               This Privacy Policy is a placeholder and will be completed by our legal team. 
-              Please contact support@somnosense.com for any privacy-related questions.
+              Please <a href="mailto:contact.somnosense@gmail.com" className="text-blue-700 underline">contact us</a> for any privacy-related questions.
             </p>
           </div>
 
@@ -75,7 +75,7 @@ export default function PrivacyPolicy() {
             </p>
             <div className="bg-gray-50 rounded-lg p-6">
               <p className="text-gray-700">
-                <strong>Email:</strong> <a href="mailto:support@somnosense.com" className="text-blue-600 hover:text-blue-800">support@somnosense.com</a>
+                <strong>Email:</strong> <a href="mailto:contact.somnosense@gmail.com" className="text-blue-600 hover:text-blue-800">contact.somnosense@gmail.com</a>
               </p>
               <p className="text-gray-700 mt-2">
                 <strong>Subject Line:</strong> Privacy Policy Inquiry

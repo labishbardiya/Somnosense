@@ -5,6 +5,11 @@ import HowItWorksSection from '@/components/HowItWorksSection';
 import ForResearchersSection from '@/components/ForResearchersSection';
 import ContactSection from '@/components/ContactSection';
 
+// Prevent search engines from indexing the home page that contains forms
+export const metadata = {
+  robots: 'noindex, nofollow',
+};
+
 export default function Home() {
   return (
     <>
